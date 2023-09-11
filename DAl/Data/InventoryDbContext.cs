@@ -1,5 +1,6 @@
 ﻿using EAL;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 
 namespace DAL.Data
 {
@@ -7,12 +8,18 @@ namespace DAL.Data
     {
         public InventoryDbContext(DbContextOptions<InventoryDbContext> options) : base(options) {}
 
-        public DbSet<InventoryItem> inventoryItem { get; set; }
+        public DbSet<Customer> Customer { get; set; }
+        
+        public DbSet<Product> Product { get; set; }
+        
+        public DbSet<PurchaseOrder> PurchaseOrder { get; set; }
+        
+        public DbSet<PurchaseOrderLineItem> PurchaseOrderLineItem { get; set; }
 
-        public DbSet<InventoryTransaction> inventoryTransaction { get; set; }
+        public DbSet<SalesOrder> SalesOrder { get; set; }
 
-        public DbSet<Location> location { get; set; }
+        public DbSet<SalesOrderLineItem> SalesOrderLineItem { get; set; }
 
-        public DbSet<Warehouse> warehouse { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }        
     }
 }
